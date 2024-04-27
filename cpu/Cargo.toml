@@ -1,0 +1,18 @@
+[package]
+name = "cuda_cudarc"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+name = "cuda_cudarc"
+
+[dependencies]
+anyhow = "1.0.82"
+cuda_std = "0.2.2"
+cudarc = "0.10.0"
+
+[build-dependencies]
+cuda_builder = "0.3.0"
