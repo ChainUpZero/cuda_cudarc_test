@@ -15,12 +15,4 @@ pub fn demo() -> Result<()> {
         };
         unsafe { hello_cuda_from_gpu.launch(cfg, (0usize,)) }?;
     }
-    println!();
-    // CPU: 你好, CUDA! (Rust版)
-    {
-        for _ in 0..16  {
-            println!("CPU: 你好, CUDA! (Rust版)");
-        }
-    }
-    Ok(())
 }

@@ -2,7 +2,18 @@ mod cuda_cpi;
 use cuda_cpi::*;
 
 
+extern "Rust" {
+    #[link_name = "hello"]
+    fn my_demo_function(a: u32) -> u32;
+}
 
+mod a {
+    // No `extern` equals `extern "Rust"`.
+    #[no_mangle]
+    fn hello(a: u32) -> u32 {
+        a
+    }
+}
 
 #[cfg(test)]
 mod tests {
