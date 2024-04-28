@@ -1,5 +1,8 @@
 mod cuda_cpi;
+mod cpu_control;
+
 use cuda_cpi::*;
+use cpu_control::*;
 
 
 extern "Rust" {

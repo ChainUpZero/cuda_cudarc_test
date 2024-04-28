@@ -9,10 +9,11 @@ pub fn demo() -> Result<()> {
         dev.load_ptx(ptx, "hello_cuda_from_gpu", &["hello_cuda_from_gpu"])?;
         let hello_cuda_from_gpu = dev.get_func("hello_cuda_from_gpu", "hello_cuda_from_gpu").unwrap();
         let cfg = LaunchConfig {
-            block_dim: (1,1,9),
-            grid_dim: (1,1,2),
+            block_dim: (1,1,1),
+            grid_dim: (1,1,1),
             shared_mem_bytes: 0,
         };
         unsafe { hello_cuda_from_gpu.launch(cfg, (0usize,)) }?;
     }
+    Ok(())
 }
